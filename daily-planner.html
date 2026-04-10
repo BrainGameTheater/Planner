@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Planner</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            background-color: white;
+            background-image:
+                linear-gradient(rgba(200, 200, 200, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200, 200, 200, 0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            page-break-after: always;
+            min-height: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2em;
+            background-color: white;
+        }
+
+        .day-header {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .day-name {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .day-date {
+            color: #666;
+            font-size: 1em;
+            margin-top: 5px;
+        }
+
+        .scheduled-tasks {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .scheduled-tasks-title {
+            font-size: 0.85em;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .scheduled-task {
+            display: flex;
+            align-items: flex-start;
+            margin: 8px 0;
+            font-size: 1em;
+        }
+
+        .scheduled-task input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 3px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        .scheduled-task label {
+            cursor: pointer;
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .scheduled-task.completed label {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .notes-area {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .notes-title {
+            font-size: 0.85em;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 250px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1em;
+            resize: vertical;
+            background-color: white;
+            line-height: 1.5;
+            box-sizing: border-box;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .weekend-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .weekend-day {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .weekend-day textarea {
+            min-height: 350px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <h1>Monday, [Date]</h1>
+        <div class="day-header">
+            <div class="day-name">Monday</div>
+            <div class="day-date">[Full Date]</div>
+        </div>
+        <div class="notes-area">
+            <div class="notes-title">Notes &amp; Tasks</div>
+            <textarea placeholder="Add notes, tasks, or appointments for Monday..."></textarea>
+        </div>
+    </div>
+
+    <div class="page">
+        <h1>Tuesday, [Date]</h1>
+        <div class="day-header">
+            <div class="day-name">Tuesday</div>
+            <div class="day-date">[Full Date]</div>
+        </div>
+        <div class="notes-area">
+            <div class="notes-title">Notes &amp; Tasks</div>
+            <textarea placeholder="Add notes, tasks, or appointments for Tuesday..."></textarea>
+        </div>
+    </div>
+
+    <div class="page">
+        <h1>Wednesday, [Date]</h1>
+        <div class="day-header">
+            <div class="day-name">Wednesday</div>
+            <div class="day-date">[Full Date]</div>
+        </div>
+        <div class="notes-area">
+            <div class="notes-title">Notes &amp; Tasks</div>
+            <textarea placeholder="Add notes, tasks, or appointments for Wednesday..."></textarea>
+        </div>
+    </div>
+
+    <div class="page">
+        <h1>Thursday, [Date]</h1>
+        <div class="day-header">
+            <div class="day-name">Thursday</div>
+            <div class="day-date">[Full Date]</div>
+        </div>
+        <div class="notes-area">
+            <div class="notes-title">Notes &amp; Tasks</div>
+            <textarea placeholder="Add notes, tasks, or appointments for Thursday..."></textarea>
+        </div>
+    </div>
+
+    <div class="page">
+        <h1>Friday, [Date]</h1>
+        <div class="day-header">
+            <div class="day-name">Friday</div>
+            <div class="day-date">[Full Date]</div>
+        </div>
+        <div class="notes-area">
+            <div class="notes-title">Notes &amp; Tasks</div>
+            <textarea placeholder="Add notes, tasks, or appointments for Friday..."></textarea>
+        </div>
+    </div>
+
+    <div class="page">
+        <h1>Weekend - [Date Range]</h1>
+        <div class="weekend-container">
+            <div class="weekend-day">
+                <div class="day-header">
+                    <div class="day-name">Saturday</div>
+                    <div class="day-date">[Full Date]</div>
+                </div>
+                <div class="notes-area">
+                    <div class="notes-title">Notes &amp; Tasks</div>
+                    <textarea placeholder="Add notes, tasks, or appointments for Saturday..."></textarea>
+                </div>
+            </div>
+
+            <div class="weekend-day">
+                <div class="day-header">
+                    <div class="day-name">Sunday</div>
+                    <div class="day-date">[Full Date]</div>
+                </div>
+                <div class="notes-area">
+                    <div class="notes-title">Notes &amp; Tasks</div>
+                    <textarea placeholder="Add notes, tasks, or appointments for Sunday..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.scheduled-task input[type="checkbox"]').forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                var taskDiv = this.parentElement;
+                if (this.checked) {
+                    taskDiv.classList.add('completed');
+                } else {
+                    taskDiv.classList.remove('completed');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
